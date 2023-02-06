@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+authors:
+- family-names: "Sildatke"
+  given-names: "Michael"
+- family-names: "Delember"
+  given-names: "Jan"
+title: "TabProIS"
+date-released: 2023-02-06
+url: "https://github.com/msildatke/TabProIS"
