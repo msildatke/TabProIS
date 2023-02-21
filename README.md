@@ -40,8 +40,6 @@ The ensembling code has little requirements which can be found in the file [`req
 
 In order to reproduce our results, you need to obtain our pretrained models. Then, you can run predictions with our dataset according to the official guides.
 
-YOLO requires the dataset to be in a format different from COCO. We provide a tool to convert the dataset to a YOLO compliant format.
-
 ### Ensembling
 
 The ensembling program can be called as follows:
@@ -63,9 +61,7 @@ Options:
 - **--threshold** _[optional, default: 0.5]_ IoU-threshold above which two detections of different models are treated as the same
 - **--strategy** _[optional, default: 0]_ Ensembling strategy: 0 = Affirmative, 1 = Unanimous
 
-### COCO 2 YOLO
-
-TODO: add script and guide
+In order to successfully run ensembling on the output of YOLO models, the output needs to be converted back to COCO first. You can, for example, use [Taeyoung96's YOLO to COCO format converter](https://github.com/Taeyoung96/Yolo-to-COCO-format-converter) for this task.
 
 ## Models
 
