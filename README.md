@@ -44,22 +44,19 @@ In order to reproduce our results, you need to obtain our pretrained models. The
 
 The ensembling program can be called as follows:
 
-```
+```shell
 PYTHONPATH=src python main.py \
-    --results_1 path --results_2 path --target output_path \
-    --results_1_threshold float --results_2_threshold float \
-    [--threshold 0.5 [--strategy 0]]
+    --model_result path thresh path thresh [path thresh [..]]
+    --target output_path [--threshold 0.5 [--strategy 0 [--method 1]]]
 ```
 
 Options:
 
-- **--results_1** Path to file containing results of first model
-- **--results_2** Path to file containing results of second model
+- **--model_result** Paths to files containing results of the models and respective confidence thresholds
 - **--target** Path to target output file
-- **--results_1_threshold** Confidence threshold for results of first model
-- **--results_2_threshold** Confidence threshold for results of second model
 - **--threshold** _[optional, default: 0.5]_ IoU-threshold above which two detections of different models are treated as the same
-- **--strategy** _[optional, default: 0]_ Ensembling strategy: 0 = Affirmative, 1 = Unanimous
+- **--strategy** _[optional, default: 1]_ Ensembling strategy: 1 = Affirmative, 2 = Consensus, 3 = Unanimous
+- **--method** _[optional, default: 1]_ Ensembling method: 1 = NMS, 2 = WBF
 
 In order to successfully run ensembling on the output of YOLO models, the output needs to be converted back to COCO first. You can, for example, use [Taeyoung96's YOLO to COCO format converter](https://github.com/Taeyoung96/Yolo-to-COCO-format-converter) for this task.
 
